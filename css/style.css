@@ -1,0 +1,435 @@
+/* Estilos Gerais - Instituto Xamânico Morada da Estrela */
+:root {
+    --color-bg: #0b1319;
+    --color-card: #13222d;
+    --color-gold: #d4af37;
+    --color-gold-light: #f3e5ab;
+    --color-text: #e2e8f0;
+    --color-muted: #a0aec0;
+    --color-accent: #1e3a4c;
+    --color-whatsapp: #25d366;
+    --font-heading: 'Cinzel', 'Georgia', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-hand: 'Cormorant Garamond', 'Great Vibes', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background-image: radial-gradient(circle at top, #1a2f3d 0%, #0b1319 70%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header & Nav */
+header {
+    background-color: rgba(11, 19, 25, 0.95);
+    border-bottom: 1px solid var(--color-gold);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+}
+
+/* Estilização do Logo do Cabeçalho */
+.header-logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    filter: invert(100%) sepia(100%) saturate(400%) hue-rotate(5deg) brightness(110%);
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.08);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+}
+
+.logo-subtitle {
+    font-size: 0.6rem;
+    color: var(--color-gold-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    font-family: var(--font-heading);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+nav a:hover, nav a.active {
+    color: var(--color-gold);
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-gold);
+}
+
+/* Botão Menu Hambúrguer (Mobile) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-gold);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.hero p.tagline {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--color-gold-light);
+    margin-bottom: 1.5rem;
+}
+
+/* Cards Grid */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--color-card);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-gold);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Tamanho e Estilo das Thumbnails dos Cards (Ajustado para PNG 500x500) */
+.card-thumb {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    flex-shrink: 0;
+}
+
+.card h2, .card h3 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.card p {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: var(--color-gold);
+    color: var(--color-bg);
+}
+
+.btn-whatsapp {
+    background: var(--color-whatsapp);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background: #1eb854;
+    color: #fff;
+    transform: scale(1.03);
+}
+
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-instagram:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(220, 39, 67, 0.5);
+    color: #ffffff;
+}
+
+/* Detalhes de Conteúdo */
+.content-section {
+    background: var(--color-card);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.content-section h2 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.info-box {
+    background: rgba(11, 19, 25, 0.6);
+    padding: 1.5rem;
+    border-left: 3px solid var(--color-gold);
+    border-radius: 4px;
+}
+
+.info-box h3, .info-box h4 {
+    color: var(--color-gold-light);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 1.5rem 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    margin-top: 4rem;
+    background-color: #070c10;
+}
+
+.footer-quote {
+    font-style: italic;
+    color: var(--color-gold-light);
+    margin-bottom: 1.5rem;
+}
+
+/* Responsividade Mobile Avançada */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0.8rem 1.2rem;
+    }
+
+    .header-logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .logo-title {
+        font-size: 1rem;
+    }
+
+    .logo-subtitle {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(11, 19, 25, 0.98);
+        border-bottom: 1px solid var(--color-gold);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    nav.active {
+        max-height: 350px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0;
+        gap: 1.2rem;
+    }
+
+    .hero {
+        padding: 2.5rem 1rem 1.5rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p.tagline {
+        font-size: 1rem;
+    }
+
+    .btn-whatsapp, .btn-instagram {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+}
