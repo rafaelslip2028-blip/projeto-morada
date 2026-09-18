@@ -30,4 +30,36 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         }
     });
+
+    // 3. Envio do Formulário de Contato Direto para o WhatsApp
+    const contatoForm = document.querySelector('form');
+    
+    if (contatoForm) {
+        contatoForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Impede o envio padrão do formulário HTML
+
+            // Captura os valores dos campos
+            const nomeInput = document.getElementById('nome');
+            const whatsappInput = document.getElementById('whatsapp');
+            const assuntoSelect = document.getElementById('assunto');
+            const mensagemInput = document.getElementById('mensagem');
+
+            if (nomeInput && whatsappInput && assuntoSelect && mensagemInput) {
+                const nome = nomeInput.value;
+                const whatsapp = whatsappInput.value;
+                const assunto = assuntoSelect.options[assuntoSelect.selectedIndex].text;
+                const mensagem = mensagemInput.value;
+
+                // Formata a mensagem que será enviada para o WhatsApp
+                const textoFormatado = `Olá, meu nome é *${nome}* (Tel/WhatsApp: ${whatsapp}).\n\n*Assunto:* ${assunto}\n*Mensagem:* ${mensagem}`;
+                const textoCodificado = encodeURIComponent(textoFormatado);
+
+                // Número oficial do Zyan
+                const numeroWhatsApp = "5571996113441";
+
+                // Abre o WhatsApp com a mensagem pronta
+                window.open(`https://wa.me/${numeroWhatsApp}?text=${textoCodificado}`, '_blank');
+            }
+        });
+    }
 });
