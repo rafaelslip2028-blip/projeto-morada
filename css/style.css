@@ -63,10 +63,15 @@ body {
     color: var(--color-text);
     font-family: var(--font-body);
     line-height: 1.6;
+    
+    /* IMAGEM DO CÉU ESTRELADO DE FUNDO COM FILTRO DE ESCURECIMENTO */
     background-image: 
-        radial-gradient(circle at 50% 10%, #172b22 0%, #0a0f0d 70%),
-        radial-gradient(circle at 10% 80%, rgba(230, 81, 0, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(241, 196, 15, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 50% 50%, rgba(10, 15, 13, 0.65) 0%, rgba(10, 15, 13, 0.92) 100%),
+        url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1920&auto=format&fit=crop');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito imersivo fixed ao rolar */
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
@@ -96,6 +101,51 @@ body::after {
     right: -150px;
     animation-direction: reverse;
     animation-duration: 50s;
+}
+
+/* ==========================================
+   PADRONIZAÇÃO DE IMAGENS E ÍCONES (FIX TAMANHOS)
+   ========================================== */
+
+/* Ícones dos Cards (padronizados em todas as páginas) */
+.card-thumb {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-gold);
+    box-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+}
+
+/* Emblema do Topo / Hero (Páginas internas) */
+.hero-emblem {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-emblem-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(241, 196, 15, 0.5));
+    animation: floatHero 4s ease-in-out infinite;
+}
+
+/* Logos do Header */
+.header-logo {
+    width: 75px !important;
+    height: 75px !important;
+    object-fit: contain;
+    filter: sepia(100%) saturate(600%) hue-rotate(350deg) brightness(125%) drop-shadow(0 0 12px rgba(230, 81, 0, 0.6));
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
 }
 
 /* ==========================================
@@ -133,19 +183,6 @@ header {
     align-items: center;
     gap: 0.8rem;
     text-decoration: none;
-}
-
-.header-logo {
-    width: 85px;
-    height: 85px;
-    object-fit: contain;
-    filter: sepia(100%) saturate(600%) hue-rotate(350deg) brightness(125%) drop-shadow(0 0 12px rgba(230, 81, 0, 0.6));
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
-}
-
-.header-logo:hover {
-    transform: scale(1.12) rotate(8deg);
-    filter: sepia(100%) saturate(800%) hue-rotate(10deg) brightness(140%) drop-shadow(0 0 18px rgba(241, 196, 15, 0.8));
 }
 
 .logo-text {
@@ -314,7 +351,6 @@ nav a.active::after {
     animation: magicalGlow 7s ease-in-out infinite;
 }
 
-/* Geometria Sagrada decorativa animada no card */
 .card::before {
     content: '✺';
     position: absolute;
@@ -342,17 +378,6 @@ nav a.active::after {
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.2rem;
-}
-
-.card-thumb {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--color-gold);
-    box-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
-    flex-shrink: 0;
-    transition: all 0.4s ease;
 }
 
 .card:hover .card-thumb {
@@ -582,8 +607,8 @@ footer {
     }
 
     .header-logo {
-        width: 58px;
-        height: 58px;
+        width: 58px !important;
+        height: 58px !important;
     }
 
     .logo-title {
@@ -649,4 +674,3 @@ footer {
         grid-template-columns: 1fr;
     }
 }
-
