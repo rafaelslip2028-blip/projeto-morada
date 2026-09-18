@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Instituto Xamânico Morada da Estrela</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../assets/icones/sol.png" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="../index.html" class="logo-link">
+                    <img src="../assets/imagens/logo.png" alt="Logo Morada da Estrela" class="header-logo">
+                    <div class="logo-text">
+                        <span class="logo-title">MORADA DA ESTRELA</span>
+                        <span class="logo-subtitle">Cultivando Ancestralidade e Autoconhecimento</span>
+                    </div>
+                </a>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="medicinas-da-floresta.html">Medicinas da Floresta</a></li>
+                    <li><a href="breathwork.html">Breathwork</a></li>
+                    <li><a href="culto-ancestral.html">Culto Ancestral</a></li>
+                    <li><a href="jogo-de-buzios.html">Jogo de Búzios</a></li>
+                    <li><a href="contato.html">Fale Conosco</a></li>
+                    <!-- Se tiver um link de contato no menu principal, pode adicionar aqui -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-emblem">
+                <img src="../assets/icones/sol.png" alt="Contato Morada da Estrela" class="hero-emblem-img">
+            </div>
+            <h1 style="font-size: 2.2rem;">FALE CONOSCO</h1>
+            <p class="tagline" style="font-size: 1rem;">Estamos prontos para te acolher</p>
+            <p class="hero-description" style="font-size: 0.9rem;">
+                Tem alguma dúvida sobre nossas vivências, rituais ou deseja agendar um atendimento? Entre em contato conosco através do formulário abaixo ou diretamente pelo WhatsApp.
+            </p>
+        </section>
+
+        <!-- Seção Principal de Conteúdo / Formulário -->
+        <section class="content-section">
+            <h2 style="font-size: 1.6rem; text-align: center; margin-bottom: 2rem;">Envie sua Mensagem</h2>
+            
+            <div style="max-width: 650px; margin: 0 auto;">
+                <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                    <div>
+                        <label for="nome" style="display: block; font-size: 0.88rem; color: var(--color-gold); margin-bottom: 0.4rem; font-family: var(--font-heading);">Seu Nome</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo" style="width: 100%; padding: 0.7rem; border: 1px solid rgba(212, 175, 55, 0.3); background: rgba(0, 0, 0, 0.2); color: #fff; border-radius: 4px; font-family: var(--font-body); font-size: 0.9rem;">
+                    </div>
+
+                    <div>
+                        <label for="whatsapp" style="display: block; font-size: 0.88rem; color: var(--color-gold); margin-bottom: 0.4rem; font-family: var(--font-heading);">Seu WhatsApp / Telefone</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(71) 99999-9999" style="width: 100%; padding: 0.7rem; border: 1px solid rgba(212, 175, 55, 0.3); background: rgba(0, 0, 0, 0.2); color: #fff; border-radius: 4px; font-family: var(--font-body); font-size: 0.9rem;">
+                    </div>
+
+                    <div>
+                        <label for="assunto" style="display: block; font-size: 0.88rem; color: var(--color-gold); margin-bottom: 0.4rem; font-family: var(--font-heading);">Assunto de Interesse</label>
+                        <select id="assunto" name="assunto" style="width: 100%; padding: 0.7rem; border: 1px solid rgba(212, 175, 55, 0.3); background: #111; color: #fff; border-radius: 4px; font-family: var(--font-body); font-size: 0.9rem;">
+                            <option value="geral">Dúvida Geral</option>
+                            <option value="medicinas">Medicinas da Floresta</option>
+                            <option value="breathwork">Breathwork</option>
+                            <option value="culto">Culto Ancestral Africano</option>
+                            <option value="buzios">Jogo de Búzios</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="mensagem" style="display: block; font-size: 0.88rem; color: var(--color-gold); margin-bottom: 0.4rem; font-family: var(--font-heading);">Sua Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Escreva como podemos te ajudar..." style="width: 100%; padding: 0.7rem; border: 1px solid rgba(212, 175, 55, 0.3); background: rgba(0, 0, 0, 0.2); color: #fff; border-radius: 4px; font-family: var(--font-body); font-size: 0.9rem; resize: vertical;"></textarea>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <button type="submit" class="btn btn-whatsapp" style="padding: 0.7rem 1.8rem; font-size: 0.9rem; cursor: pointer; border: none;">
+                            📱 Enviar Mensagem
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Box de Destaque Alternativo (Contato Direto) -->
+            <div class="spiritual-quote-box" style="margin-top: 3rem; text-align: center;">
+                <p style="font-size: 0.9rem;">Prefere um atendimento imediato?</p>
+                <p style="margin-top: 0.6rem; font-size: 0.88rem;">Fale diretamente com o Zyan através do nosso canal oficial no WhatsApp.</p>
+                <div style="margin-top: 1.2rem;">
+                    <a href="https://wa.me/5571996113441" target="_blank" class="btn btn-whatsapp" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                        📱 WhatsApp (71) 99611-3441
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="margin-bottom: 1.2rem;">
+            <img src="../assets/imagens/logo.png" alt="Logo Morada da Estrela" style="width: 130px; height: 130px; object-fit: contain; filter: invert(100%) sepia(100%) saturate(400%) hue-rotate(5deg) brightness(110%);">
+        </div>
+        <p class="footer-quote" style="font-size: 1.05rem;">"Te esperamos!"</p>
+        <p style="color: var(--color-muted); font-size: 0.85rem;">Contato com Zyan: <a href="https://wa.me/5571996113441" style="color: var(--color-gold);" target="_blank">(71) 99611-3441</a></p>
+        <p style="color: rgba(255,255,255,0.3); font-size: 0.75rem; margin-top: 0.8rem;">&copy; Instituto Xamânico Morada da Estrela.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
