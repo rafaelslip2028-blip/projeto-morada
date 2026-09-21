@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.classList.toggle('open');
         });
 
-        // Fecha o menu ao clicar em qualquer item da lista
+        // Fecha o menu ao clicar em qualquer item da lista (exceto o botão de tema)
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -60,6 +60,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Abre o WhatsApp com a mensagem pronta
                 window.open(`https://wa.me/${numeroWhatsApp}?text=${textoCodificado}`, '_blank');
             }
+        });
+    }
+
+    // 4. Controle de Alternância de Tema (Claro / Escuro)
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const bodyElement = document.body;
+
+    // Verifica se já havia um tema salvo anteriormente no navegador
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'light') {
+        bodyElement.classList.add('light-theme');
+        if (themeToggleBtn) themeToggleBtn.textContent = '🌙 Tema';
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            bodyElement.classList.toggle('light-theme');
+            
+            let theme = 'dark';
+            if (bodyElement.classList.contains('light-theme')) {
+                theme = 'light';
+                themeToggleBtn.textContent = '🌙 Tema';
+            } else {
+                themeToggleBtn.textContent = '☀️ Tema';
+            }
+            
+            // Salva a escolha do usuário
+            localStorage.setItem('theme', theme);
         });
     }
 });
