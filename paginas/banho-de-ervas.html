@@ -8,6 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+    <!-- Caminho corrigido para subir apenas uma pasta -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../assets/icones/sol.png" type="image/x-icon">
     <style>
@@ -155,7 +156,6 @@
             max-width: 800px;
         }
 
-        /* Responsividade para telas menores */
         @media (max-width: 768px) {
             .lightbox-prev {
                 left: 10px;
@@ -195,7 +195,7 @@
 
             <nav>
                 <ul>
-                    <li><a href="index.html">Início</a></li>
+                    <li><a href="../index.html">Início</a></li>
                     <li><a href="medicinas-da-floresta.html">Medicinas da Floresta</a></li>
                     <li><a href="breathwork.html">Breathwork</a></li>
                     <li><a href="culto-ancestral.html">Culto Ancestral</a></li>
@@ -211,7 +211,7 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-emblem">
-                <img src="../../assets/icones/sol.png" alt="Banho de Ervas" class="hero-emblem-img">
+                <img src="../assets/icones/sol.png" alt="Banho de Ervas" class="hero-emblem-img">
             </div>
             <h1 style="font-size: 2.2rem;">BANHO DE ERVAS</h1>
             <p class="tagline" style="font-size: 1rem;">19 de Setembro de 2021</p>
@@ -302,7 +302,7 @@
 
             <!-- Botão de Voltar para a Galeria Geral -->
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="/galeria.html" class="btn btn-whatsapp" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                <a href="galeria.html" class="btn btn-whatsapp" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
                     ← Voltar para a Galeria Principal
                 </a>
             </div>
@@ -322,7 +322,7 @@
 
     <footer>
         <div style="margin-bottom: 1.2rem;">
-            <img src="../../assets/imagens/logo.png" alt="Logo Morada da Estrela"
+            <img src="../assets/imagens/logo.png" alt="Logo Morada da Estrela"
                 style="width: 130px; height: 130px; object-fit: contain; filter: invert(100%) sepia(100%) saturate(400%) hue-rotate(5deg) brightness(110%);">
         </div>
         <p class="footer-quote" style="font-size: 1.05rem;">"Axé e Gratidão!"</p>
@@ -333,9 +333,8 @@
             Morada da Estrela.</p>
     </footer>
 
-    <script src="../../js/main.js"></script>
+    <script src="../js/main.js"></script>
     <script>
-        // Script do Lightbox para a Galeria
         document.addEventListener('DOMContentLoaded', function() {
             const galleryItems = document.querySelectorAll('.gallery-item');
             const lightbox = document.getElementById('lightbox');
@@ -348,7 +347,6 @@
             let currentIndex = 0;
             const imagesData = [];
 
-            // Coleta os dados de todas as fotos da página
             galleryItems.forEach((item, index) => {
                 const img = item.querySelector('img');
                 const caption = item.querySelector('.gallery-caption');
@@ -359,12 +357,11 @@
                     text: caption ? caption.textContent : ''
                 });
 
-                // Evento de clique para abrir o lightbox na foto específica
                 item.addEventListener('click', () => {
                     currentIndex = index;
                     updateLightbox();
                     lightbox.style.display = 'flex';
-                    document.body.style.overflow = 'hidden'; // Impede o scroll da página ao fundo
+                    document.body.style.overflow = 'hidden';
                 });
             });
 
@@ -389,22 +386,19 @@
 
             function closeLightbox() {
                 lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Restaura o scroll da página
+                document.body.style.overflow = 'auto';
             }
 
-            // Eventos de navegação
             prevBtn.addEventListener('click', showPrev);
             nextBtn.addEventListener('click', showNext);
             closeBtn.addEventListener('click', closeLightbox);
 
-            // Fechar ao clicar fora da imagem (no fundo escuro)
             lightbox.addEventListener('click', (e) => {
                 if (e.target === lightbox) {
                     closeLightbox();
                 }
             });
 
-            // Navegação por teclado (Setas Esquerda/Direita e ESC)
             document.addEventListener('keydown', (e) => {
                 if (lightbox.style.display === 'flex') {
                     if (e.key === 'ArrowLeft') {
