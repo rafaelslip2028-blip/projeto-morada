@@ -146,74 +146,7 @@
         <p style="color: rgba(255,255,255,0.3); font-size: 0.75rem; margin-top: 0.8rem;">&copy; Instituto Xamânico
             Morada da Estrela.</p>
     </footer>
-
-    <!-- SCRIPT JAVASCRIPT -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Menu Hambúrguer Mobile
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('nav');
-
-            if (menuToggle && navMenu) {
-                menuToggle.addEventListener('click', () => {
-                    navMenu.classList.toggle('active');
-                    menuToggle.classList.toggle('open');
-                });
-            }
-
-            // Envio do Formulário para o WhatsApp
-            const contatoForm = document.querySelector('form');
-            if (contatoForm) {
-                contatoForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const nome = document.getElementById('nome').value;
-                    const whatsapp = document.getElementById('whatsapp').value;
-                    const assunto = document.getElementById('assunto').options[document.getElementById('assunto').selectedIndex].text;
-                    const mensagem = document.getElementById('mensagem').value;
-
-                    const textoFormatado = `Olá, meu nome é *${nome}* (Tel/WhatsApp: ${whatsapp}).\n\n*Assunto:* ${assunto}\n*Mensagem:* ${mensagem}`;
-                    window.open(`https://wa.me/5571996113441?text=${encodeURIComponent(textoFormatado)}`, '_blank');
-                });
-            }
-
-            // Alternância de Tema & Mudança de cor do Label do Assunto
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const bodyElement = document.body;
-            const labelAssunto = document.getElementById('label-assunto'); // Seleciona o label do assunto
-
-            // Função para atualizar a cor do label conforme o tema ativo
-            function atualizarCorLabel(isLight) {
-                if (labelAssunto) {
-                    // Muda para um tom escuro legível no tema claro ou volta para o dourado no escuro
-                    labelAssunto.style.color = isLight ? '#1a2621' : 'var(--color-gold)';
-                }
-            }
-
-            // Verifica tema salvo ao carregar a página
-            if (localStorage.getItem('theme') === 'light') {
-                bodyElement.classList.add('light-theme');
-                if (themeToggleBtn) themeToggleBtn.textContent = '🌙 Tema';
-                atualizarCorLabel(true);
-            }
-
-            // Evento de clique no botão de tema
-            if (themeToggleBtn) {
-                themeToggleBtn.addEventListener('click', () => {
-                    bodyElement.classList.toggle('light-theme');
-                    
-                    if (bodyElement.classList.contains('light-theme')) {
-                        localStorage.setItem('theme', 'light');
-                        themeToggleBtn.textContent = '🌙 Tema';
-                        atualizarCorLabel(true); // Aplica cor para tema claro
-                    } else {
-                        localStorage.setItem('theme', 'dark');
-                        themeToggleBtn.textContent = '☀️ Tema';
-                        atualizarCorLabel(false); // Aplica cor para tema escuro
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
