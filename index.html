@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Xamânico Morada da Estrela</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/icones/sol.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/imagens/logo.png" alt="Logo Morada da Estrela" class="header-logo">
+                    <div class="logo-text">
+                        <span class="logo-title">MORADA DA ESTRELA</span>
+                        <span class="logo-subtitle">Instituto Xamânico</span>
+                    </div>
+                </a>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul>
+                    <!-- CORRIGIDO: Como estamos na raiz, o Início aponta para ele mesmo sem '../' -->
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="paginas/medicinas-da-floresta.html">Medicinas da Floresta</a></li>
+                    <li><a href="paginas/breathwork.html">Breathwork</a></li>
+                    <li><a href="paginas/culto-ancestral.html">Culto Ancestral</a></li>
+                    <li><a href="paginas/jogo-de-buzios.html">Jogo de Búzios</a></li>
+                    <li><a href="paginas/contato.html">Contato</a></li>
+                    <!-- Botão de Alternância de Tema -->
+                    <li><button id="theme-toggle" aria-label="Alternar Tema">☀️ Tema</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <span class="hero-badge">🌿 Instituto Xamânico</span>
+            <h1>BEM-VINDO À MORADA DA ESTRELA</h1>
+            <p class="tagline">Um espaço sagrado dedicado à cura, expansão da consciência e reconexão com a sabedoria
+                ancestral.</p>
+
+            <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/5571996113441" target="_blank" class="btn btn-whatsapp"
+                    style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                    📱 WhatsApp
+                </a>
+                <a href="https://www.instagram.com/centromoradadaestrela" target="_blank" class="btn btn-instagram"
+                    style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                    📸 Instagram
+                </a>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-heading">
+                <span class="section-label">Nossos Trabalhos & Medicinas Sagradas</span>
+                <h2>Caminhos para a cura, a presença<br>e a conexão ancestral.</h2>
+                <p class="section-subtitle">Cada prática é uma porta para a profundidade, o autoconhecimento e a
+                    reconexão com a natureza e a linhagem.</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-media card-media-ayahuasca">
+                        <span class="card-tag">🌿 Medicina Sagrada</span>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <h3>Medicinas da Floresta</h3>
+                            <p>Trabalhos sagrados com Ayahuasca, Sananga e Rapé. Medicinas
+                                ancestrais que promovem cura física, mental, emocional e espiritual.</p>
+                        </div>
+                        <a href="paginas/medicinas-da-floresta.html" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media card-media-breathwork">
+                        <span class="card-tag">🌬️ Respiração Consciente</span>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <h3>Breathwork</h3>
+                            <p>A respiração que transforma. Oficina de respiração consciente que
+                                atua no corpo, mente e emoções para trazer clareza e presença.</p>
+                        </div>
+                        <a href="paginas/breathwork.html" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media card-media-culto">
+                        <span class="card-tag">🔥 Linhagem Ancestral</span>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <h3>Culto Ancestral Africano</h3>
+                            <p>Raízes que sustentam, forças que guiam. O encontro com a força dos
+                                ancestrais, Orixás, Inquices e a energia da natureza.</p>
+                        </div>
+                        <a href="paginas/culto-ancestral.html" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media card-media-buzios">
+                        <span class="card-tag">🐚 Divinação Sagrada</span>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <h3>Jogo de Búzios</h3>
+                            <p>Jogo sagrado de confirmação dos Orixás e Odus. Revela, confirma e
+                                direciona seu caminho com clareza e proteção espiritual.</p>
+                        </div>
+                        <a href="paginas/jogo-de-buzios.html" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-emblem">★</div>
+                <p class="footer-title">MORADA DA ESTRELA</p>
+                <p class="footer-subtitle">Instituto Xamânico</p>
+                <p class="footer-quote">"Escute. Confie. Receba."</p>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contato e Agendamentos</h4>
+                <p>
+                    Contato e Agendamentos com Zyan:
+                    <a href="https://wa.me/5571996113441" target="_blank">(71) 99611-3441</a>
+                </p>
+                <p>
+                    Instagram:
+                    <a href="https://www.instagram.com/centromoradadaestrela" target="_blank">@centromoradadaestrela</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copy">&copy; Instituto Xamânico Morada da Estrela. Todos os direitos reservados.</p>
+            <nav class="footer-links">
+                <a href="paginas/medicinas-da-floresta.html">Medicinas da Floresta</a>
+                <a href="paginas/breathwork.html">Breathwork</a>
+                <a href="paginas/culto-ancestral.html">Culto Ancestral</a>
+                <a href="paginas/jogo-de-buzios.html">Jogo de Búzios</a>
+                <a href="paginas/contato.html">Contato</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
